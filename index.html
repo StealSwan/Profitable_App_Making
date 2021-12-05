@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 사이트 설명 -->
+    <meta name="description" content="MBTI에 따라 나랑 꼭 맞는 마스크도 추천받을 수 있는 테스트입니다.">
+
+    <!-- 오픈 그래프 -->
+    <meta property="og:type" content="website"> 
+    <meta property="og:title" content="이시국 MBTI 유형별 추천 마스크">
+    <meta property="og:description" content="MBTI에 따라 나랑 꼭 맞는 마스크도 추천받을 수 있는 테스트입니다.">
+    <meta property="og:image" content="https://maskmbti.netlify.app/result9.jpg">
+    <meta property="og:url" content="https://maskmbti.netlify.app/">
+
+    <!-- 제목 -->
+    <title>이시국 MBTI 유형별 추천 마스크</title>
+
+    <!-- 부트스트랩이 css보다 위에 있어야 css에 덮어쓰게 됨 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- i클래스 폰트어썸!!! -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Nanum+Brush+Script&family=Song+Myung&display=swap" rel="stylesheet">
+
+
+
+    <!-- 자바 스크립트 부트스트랩 코드 & 부트스트랩 jquery 코드 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TimelineMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+
+</head>
+
+
+<!-- container는 본래 부트스트랩에서 그리드를 만들때 사용 -->
+<body class="container" style="display: block;">
+
+    <!-- article은 해당 사이트와는 완전 독립적으로 구성되는 요소를 정의할 때 사용 -->
+    <article class="start">
+        
+        <!-- mt는 margin을 의미 & 부트스트랩 클래스를 통해 가운데 배치도 가능 -->
+        <!-- <h1 id="subject1" class="text-center mt-5">MBTI별</h1>
+        <h1 id="subject2" class="text-center ">추천 마스크</h1> -->
+
+        <article class="container2">
+            <h1>
+              <span class="title titleSpan">이시국</span>
+              <span class="title titleSpan">MBTI 유형별</span>
+              <span class="title titleSpan">추천 마스크</span>
+            </h1>
+        </article>
+
+        
+        <!-- 시작 버튼 클릭시 jquert로 현페이지가 사라지고 새로운 페이지 등장하도록 만들기 -->
+        <div class="page">
+            <button type="button" class="fun-btn" onclick="start()">테스트 시작하기</button>   
+        </div>
+    </article>  
+
+
+    <!-- 문제구성 -->
+    <article class="question">
+
+        <a href="" id="begin">처음부터</a>
+
+        <!-- 프로그래스바 -->
+        <div class="progress-bar mt-5">
+            <!-- 자동계산 calc -->
+            <div class="progress" id="progress" role="progress" style="width: calc(100/12*1%)">
+                <!-- 아이콘 -->
+                <!-- <i class="fa fa-heart" id="progress-icon" style="overflow:visible!important"></i> -->
+            </div>
+        </div>
+        
+        
+        <!-- 문제 정답 선택 버튼 위아래로 -->
+        <h2 id="title1">Question</h2>
+        <h2 id="title2" class="text-center">문제</h2>
+        <!-- id값에 따라 각 타입에 해당하는 점수 상승  -->
+        <input id="type" type="hidden" value="EI">
+        <button id="A" type="button" class="w-btn w-btn-pink mt-5">1번</button>
+        <button id="B" type="button" class="w-btn w-btn-pink mt-5">2번</button>
+
+    </article>
+
+
+
+    <!-- 로딩창 -->
+    <div class="loading">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <span>Loading</span>
+    </div>
+
+
+
+    <!-- 결과 화면 -->
+    <article class="result">
+        <h5 id="know1" class="text-center mt-5">😋알고 계셨나요?😋</h5>
+        <h5 id="know2" class="text-center mt-2">마스크는 가면과 같은 뜻으로 쓰인답니다</h5>
+        
+        <img id="img" class="rounded-circle mt-5" src="ex1.png" alt="">
+        <h2 id="mbti" class="text-center">MBTI</h2>
+        
+        <h2 id="character" class="text-center">Character</h2>
+        <h5 id="know1" class="text-center">🔍당신에게 꼭 어울리는 마스크는?🔎</h5>
+        <h2 id="mask" class="text-center">마스크 테스트</h2>
+        
+
+        <h2 id="explain1" class="text-center">explain1</h2>
+        <div id="explains">
+            <h2 id="explain2" class="text-center">explain2</h2>
+        </div>    
+
+        <h5 id="know1" class="text-center">😍나와 최고의 궁합은?😍</h5>
+        <h2 id="good" class="text-center">good</h2>
+
+        <h5 id="badcom" class="text-center">😷나와 최악의 궁합은?😷</h5>
+        <h2 id="bad" class="text-center">bad</h2>
+
+        <button type="button" id="fun2" class="fun-btn" onclick="location.href=''">처음부터</button>
+
+        <!-- 결과공유 -->
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <h5 id="sharing" class="text-center">❤️공유하기❤️</h5> 
+        <div class="share addthis_inline_share_toolbox_5fks"></div>
+        
+    </article> 
+
+
+    <!-- 점수를 저장하는 곳 - value -->
+     <input type="hidden" id="EI" value="0">
+     <input type="hidden" id="SN" value="0">
+     <input type="hidden" id="TF" value="0">
+     <input type="hidden" id="JP" value="0">
+
+
+     <!-- 스크립트 -->
+     <script src="script.js"></script>
+
+
+     <!-- add this 공유 -->
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61ab25a20efae5f2"></script>
+
+
+    <footer>
+
+        <article class="kakao_ad">
+        <!-- 광고 kakao addfit -->
+        <ins class="kakao_ad_area" style="display:none;" 
+            data-ad-unit    = "DAN-zzhAHWQTsTfD4xbW" 
+            data-ad-width   = "320" 
+            data-ad-height  = "100"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        </article>
+
+        <!-- footer : 저작권 -->
+        <div class="footer">
+
+            <div class="footer-str">
+                <h3 id="footer-h">MBTI 추천 마스크</h3>
+                <p id="footer-p">제작자: 김수환</p>
+                <p id="footer-p">이메일: vatican0@naver.com</p>
+                <p id="footer-p">블로그: https://stealswan.tistory.com/</p>
+                <p id="footer-p">Copyright © 2021 김수환. 모든 권리 보유.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

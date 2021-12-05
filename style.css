@@ -1,0 +1,639 @@
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+
+html {
+  height: 100%;
+}
+
+article{
+    /* 가로 정렬 */
+    display: flex;
+    /* 세로정렬  - 부모에 해당하는 article을 꽉 채우는 형태로 생성*/
+    flex-direction: column;
+
+}
+
+
+/* 전체 */
+.container{
+    background-image: url(mask7.jpg);
+    background-repeat: repeat;
+    margin: 0 auto;
+}
+
+
+
+.start{
+  width: 100%;
+}
+
+/* 코드펜 */
+.container2 {
+  transform: translate(-50%, 30%);
+  top: 50%;
+  left: 50%;
+  display: block;
+  position: relative;
+  max-width: 300px;
+  margin-top: 5%;
+}
+
+
+h1 {
+  font-family: "Fjalla One", sans-serif;
+  background: linear-gradient(to bottom, #405166 0%, #656f6f 100%);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 42px;
+  margin: 0;
+  line-height: 32px;
+  letter-spacing: 2px;
+}
+
+.title {
+  transform: translateX(-50%) rotate(-10deg);
+  display: block;
+  float: left;
+  left: 50%;
+  position: relative;
+}
+
+span {
+  font-family: 'Jua', sans-serif;
+  margin-top: 8%;
+  transform: skew(-10deg);
+  display: block;
+  float: left;
+  text-shadow: #533d4a 1px 1px, #533d4a 2px 2px, #533d4a 3px 3px, #533d4a 4px 4px, #533d4a 5px 5px, #533d4a 6px 6px;
+  min-width: 10px;
+  min-height: 10px;
+  position: relative;
+}
+
+.title:nth-child(1) {
+  color: #e7503c;
+}
+.title:nth-child(2) {
+  color: #12d466;
+}
+.title:nth-child(3) {
+  color: #f7c522;
+}
+
+
+
+/* 제목 */
+/* #subject1{
+    font-family: 'Gugi', cursive;
+    color: #ffffff;
+    margin-top: 55%;
+    font-size: 2em;
+    float: left;
+}
+
+
+#subject2{
+    font-family: 'Gugi', cursive;
+    color: #ffffff;
+} */
+
+
+/* 질문 */
+.question{
+    display: none;
+    width: 100%;
+    margin-top: 13%;
+}
+
+
+/* 문제 항목 */
+#title1{
+  font-family: 'Jua', sans-serif;
+  color: rgb(204, 19, 204);
+  font-size: 1.4em;
+  margin-left: 3%;
+}
+
+
+#title2{
+  font-family: 'Jua', sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+
+.result{
+    display: none;
+}
+
+
+/* 알고 계셨나요?1 */
+#know1{
+  margin-top: 25%;
+  font-family: 'Jua', sans-serif;
+}
+
+/* 알고 계셨나요?2 */
+#know2{
+  
+  font-size: 1.1em;
+  font-family: 'Jua', sans-serif;
+}
+
+
+/* 결과 이미지 */
+#img{
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    border: 8px solid #d381c1;
+}
+
+
+/* mbti 유형 */
+#mbti{
+
+  margin-top: 10%;
+  font-family: 'Jua', sans-serif;
+  color: #8d1d75;
+}
+
+
+/* character */
+#character{
+
+  margin-top: 2%;
+  font-family: 'Jua', sans-serif;
+  color: red;
+}
+
+
+/* 추천 마스크 */
+#mask{
+
+  margin-top: 2%;
+  font-family: 'Jua', sans-serif;
+  color: red;
+}
+
+
+/* 설명1 */
+#explain1{
+  margin-top: 25%;
+  font-family: 'Jua', sans-serif;
+  font-size: 1.2em;
+}
+
+
+/* 설명2를 담는 div */
+#explains{
+
+  margin-top: 2%;
+  background-color: rgba(192, 113, 172, 0.438);
+  border-radius: 30px;
+  border: 1px solid;
+}
+
+
+/* 설명2 */
+#explain2{
+  
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 3%;
+  margin-right: 3%;
+
+  line-height: 2;
+  font-family: 'Jua', sans-serif;
+  font-size: 1em;
+}
+
+
+/* 좋은 상성 */
+#good{
+
+  margin-top: 2%;
+  font-family: 'Jua', sans-serif;
+  color: red;
+}
+
+
+#badcom{
+
+  font-family: 'Jua', sans-serif;
+  margin-top: 10%;
+}
+
+
+/* 나쁜 상성 */
+#bad{
+
+  margin-top: 2%;
+  font-family: 'Jua', sans-serif;
+  color: red;
+}
+
+
+/* 처음부터 버튼 */
+#fun2{
+
+  margin-top: 20%;
+  margin-bottom: 15%;
+  padding: 0.8em 1.2em;
+}
+
+
+/* 공유하기 */
+#sharing{
+
+  margin-top: 3%;
+  margin-bottom: 3%;
+  font-family: 'Jua', sans-serif;
+}
+
+
+/* 버튼 */
+#btns {
+	display: flex;
+	justify-content: center;
+}
+
+/* 버튼 */
+.page {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* add default color for animation start  */
+
+
+/* toggle this class */
+
+.color-bg-start {
+  background-color: salmon;
+}
+
+
+/* toggle class bg-animate-color */
+
+.bg-animate-color {
+  animation: random-bg .5s linear infinite;
+}
+
+
+/* add animation to bg color  */
+
+@keyframes random-bg {
+  from {
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.fun-btn {
+  /* change bg color to get different hues    */
+  font-family: 'Jua', sans-serif;
+  background-color: rgb(231, 85, 195);
+  color: white;
+  padding: 1.5em 2em;
+  border: none;
+  transition: all .3s ease;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  outline: none;
+  align-self: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.fun-btn:hover {
+  animation: random-bg .5s linear infinite, grow 1300ms ease infinite;
+}
+
+.start-fun {
+  background-color: #fff !important;
+  /* change color of button text when fun is started   */
+  color: salmon !important;
+}
+
+
+/* 문제 버튼 */
+.w-btn {
+  position: relative;
+  border: none;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: bolder;
+  transition: 0.25s;
+}
+
+.w-btn-outline {
+  position: relative;
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.w-btn-pink {
+  background-color: #f199bc;
+  font-size: 16px;
+  font-family: 'Jua', sans-serif;
+}
+
+
+.w-btn-pink-outline {
+  border: 3px solid #f199bc;
+}
+
+
+.w-btn-pink-outline:hover {
+  background-color: #f199bc;
+}
+
+
+
+.w-btn-outline:hover {
+  letter-spacing: 2px;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.w-btn:active {
+  transform: scale(1.5);
+}
+
+.w-btn-outline:active {
+  transform: scale(1.5);
+}
+
+
+
+/* pulsating effect on button */
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.3);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.3);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+
+/* 프로그레스바 */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  width: 100%;
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#loader {
+  width: 550px;
+}
+.percent-count {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.5rem;
+  color: #8aaaff;
+}
+
+.progress-bar {
+  background: #e6eeff;
+  width: 100%;
+  height: 15px;
+  border-radius: 50px;
+  margin-bottom: 20%;
+  overflow: hidden;
+}
+.progress-bar .progress {
+  background-image: linear-gradient(90deg, #8aaaff, #fa8cff);
+  width: 3px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+
+/* 처음부터 */
+#begin{
+  font-family: 'Jua', sans-serif;
+  color: rgb(204, 19, 204);
+  font-size: 1.3em;
+}
+
+
+/* 로딩창 */
+.loading{
+  /* 시작할때는 안보이게 */
+  display: none;
+
+  width:200px;
+  height:60px;
+  position: absolute;
+  left:50%;
+  top:45%;
+  transform: translate(-50%, -50%);
+}
+
+.circle{
+  width:20px;
+  height:20px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgb(252, 135, 174);
+  left:15%;
+  transform-origin: 50%;
+  animation: circle .5s alternate infinite ease;
+}
+
+@keyframes circle{
+  0%{
+      top:60px;
+      height:5px;
+      border-radius: 50px 50px 25px 25px;
+      transform: scaleX(1.7);
+  }
+  40%{
+      height:20px;
+      border-radius: 50%;
+      transform: scaleX(1);
+  }
+  100%{
+      top:0%;
+  }
+}
+.circle:nth-child(2){
+  left:45%;
+  animation-delay: .2s;
+}
+.circle:nth-child(3){
+  left:auto;
+  right:15%;
+  animation-delay: .3s;
+}
+.shadow{
+  width:20px;
+  height:4px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  top:62px;
+  transform-origin: 50%;
+  z-index: -1;
+  left:15%;
+  filter: blur(1px);
+  animation: shadow .5s alternate infinite ease;
+}
+
+@keyframes shadow{
+  0%{
+      transform: scaleX(1.5);
+  }
+  40%{
+      transform: scaleX(1);
+      opacity: .7;
+  }
+  100%{
+      transform: scaleX(.2);
+      opacity: .4;
+  }
+}
+.shadow:nth-child(4){
+  left: 45%;
+  animation-delay: .2s
+}
+.shadow:nth-child(5){
+  left:auto;
+  right:15%;
+  animation-delay: .3s;
+}
+
+.loading span{
+  position: absolute;
+  top:75px;
+  font-family: 'Jua', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 12px;
+  color: rgb(225, 0, 255);
+  left:15%;
+  box-shadow: none;
+  text-shadow: none;
+  transform: none;
+}
+
+
+/* 결과 공유창 */
+.share{
+
+  margin: 0 auto;
+  margin-bottom: 10%;
+}
+
+
+/* footer */
+.footer {
+  display: flex;
+  flex-direction: row;
+  background-color: #dba6d0;
+  width: 108%;
+  height: 200px;
+  margin-top: 30%;
+  margin-left: -4%;
+  padding: 35px 30px 0 30px;
+  font-family: 'Jua', sans-serif;
+  /* border: 3px solid #8d1d75; */
+}
+
+
+#footer-h {
+  color: var(--color-white);
+  font-size: 1.5rem;
+  font-family: 'Jua', sans-serif;
+}
+
+#footer-p {
+  color: var(--color-light-gray);
+  font-size: 0.8rem;
+  margin-top: 0;
+  margin-bottom: 3px;
+}
+
+
+/* footer */
+footer{
+
+  margin-top: 25%;
+}
+
+
+/* kakao addfit */
+.kakao_ad{
+
+  width: 320px;
+  margin: 0 auto;
+}
+
+
+/* 프로그래스바 하트 아이콘
+
+#progress-icon {
+  overflow: visible;
+  z-index: 2;
+  text-align: end;
+  font-size: 2.0rem;
+  text-shadow: 
+  0 0 5px #2196f3,
+  0 0 20px #2196f3,
+  0 0 30px #2196f3,
+  0 0 40px #2196f3,
+  0 0 50px #2196f3;
+animation: icon-animate 5s linear infinite;
+}
+
+@keyframes icon-animate {
+0% {
+  filter: hue-rotate(-5deg);
+}
+
+100% {
+  filter: hue-rotate(10deg);
+}
+}
+
+#progress-icon::before {
+  text-align: end;
+  background-color: transparent;
+  overflow: visible;
+} */
