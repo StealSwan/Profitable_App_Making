@@ -5,18 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+
     <!-- 사이트 설명 -->
-    <meta name="description" content="MBTI에 따라 나랑 꼭 맞는 마스크도 추천받을 수 있는 테스트입니다.">
+    <meta name="description" content="내가 만약 고양이였다면? 그 궁금증을 해소해드립니다.">
 
     <!-- 오픈 그래프 -->
     <meta property="og:type" content="website"> 
-    <meta property="og:title" content="이시국 MBTI 유형별 추천 마스크">
-    <meta property="og:description" content="MBTI에 따라 나랑 꼭 맞는 마스크도 추천받을 수 있는 테스트입니다.">
-    <meta property="og:image" content="https://maskmbti.netlify.app/result9.jpg">
-    <meta property="og:url" content="https://maskmbti.netlify.app/">
+    <meta property="og:title" content="묘생 테스트 내가 만약에 고양이였다면?">
+    <meta property="og:description" content="당신의 묘생을 확인해드립니다!">
+    <meta property="og:image" content="https://mycatlife.netlify.app/bg3.jpg">
+    <meta property="og:url" content="https://mycatlife.netlify.app/">
 
-    <!-- 제목 -->
-    <title>이시국 MBTI 유형별 추천 마스크</title>
+    <!-- 제목 --> 
+    <title>묘생 테스트</title>
 
     <!-- 부트스트랩이 css보다 위에 있어야 css에 덮어쓰게 됨 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -52,42 +58,48 @@
 
         <article class="container2">
             <h1>
-              <span class="title titleSpan">이시국</span>
-              <span class="title titleSpan">MBTI 유형별</span>
-              <span class="title titleSpan">추천 마스크</span>
+              <span class="title titleSpan">묘생 테스트</span>
+              <span class="title titleSpan">내가 만약에</span>
+              <span class="title titleSpan">고양이였다면?</span>
             </h1>
         </article>
 
         
         <!-- 시작 버튼 클릭시 jquert로 현페이지가 사라지고 새로운 페이지 등장하도록 만들기 -->
         <div class="page">
-            <button type="button" class="fun-btn" onclick="start()">테스트 시작하기</button>   
+            <button type="button" class="fun-btn" onclick="start()">🐾 묘생살기 🐾</button>   
         </div>
     </article>  
 
 
     <!-- 문제구성 -->
-    <article class="question">
+    <article class="image-upload">
 
-        <a href="" id="begin">처음부터</a>
+        <a href="" id="begin">처음으로</a>
+        
 
-        <!-- 프로그래스바 -->
-        <div class="progress-bar mt-5">
-            <!-- 자동계산 calc -->
-            <div class="progress" id="progress" role="progress" style="width: calc(100/12*1%)">
-                <!-- 아이콘 -->
-                <!-- <i class="fa fa-heart" id="progress-icon" style="overflow:visible!important"></i> -->
+        <!-- 이미지 업로더 -->
+        <div class="file-upload">
+            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">이미지 첨부하기</button>
+          
+            <div class="image-upload-wrap">
+              <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+              <div class="drag-text">
+                <h4>🎥 사진나오는 곳 🎥</h4>
+              </div>
             </div>
-        </div>
-        
-        
-        <!-- 문제 정답 선택 버튼 위아래로 -->
-        <h2 id="title1">Question</h2>
-        <h2 id="title2" class="text-center">문제</h2>
-        <!-- id값에 따라 각 타입에 해당하는 점수 상승  -->
-        <input id="type" type="hidden" value="EI">
-        <button id="A" type="button" class="w-btn w-btn-pink mt-5">1번</button>
-        <button id="B" type="button" class="w-btn w-btn-pink mt-5">2번</button>
+            <div class="file-upload-content">
+              <img class="file-upload-image" src="#" alt="your image" />
+              <div class="image-title-wrap">
+                <button type="button" onclick="removeUpload()" class="remove-image">사진 내리기 
+                    <br><div class="image-title">업로드된 사진</div></button>
+                
+                    <br>
+
+                <button type="button" onclick="result()" class="go-result">결과보기</button>    
+              </div>
+            </div>
+          </div>
 
     </article>
 
@@ -95,40 +107,34 @@
 
     <!-- 로딩창 -->
     <div class="loading">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
-        <div class="shadow"></div>
-        <span>Loading</span>
+        <h5 class="intro">🐈고양이로 변신중🐈</h5>
+        <div class="box">
+          <div class="cat">
+            <div class="cat__body"></div>
+            <div class="cat__body"></div>
+            <div class="cat__tail"></div>
+            <div class="cat__head"></div>
+          </div>
+        </div>
+        <!-- <blockquote class="info">inspired from <a href="https://dribbble.com/domaso">domaso</a>'s dribbble: <a href="https://dribbble.com/shots/3197970-Loading-cat">Loading cat</a><br/>fork from <a href="https://www.facebook.com/tenyoku8478">林天翼</a>'s <a href="https://www.csie.ntu.edu.tw/~b02902062/load_cat/">load cat</a>
+          via: <a href="https://www.facebook.com/groups/f2e.tw/permalink/1180443255326371/?comment_id=1180487985321898">FB comment</a>
+        </blockquote> -->
     </div>
 
 
 
     <!-- 결과 화면 -->
     <article class="result">
-        <h5 id="know1" class="text-center mt-5">😋알고 계셨나요?😋</h5>
-        <h5 id="know2" class="text-center mt-2">마스크는 가면과 같은 뜻으로 쓰인답니다</h5>
+        <h4 id="know1" class="text-center mt-6">💥 고양이로 변신 완료 💥</h4>
         
-        <img id="img" class="rounded-circle mt-5" src="ex1.png" alt="">
-        <h2 id="mbti" class="text-center">MBTI</h2>
-        
-        <h2 id="character" class="text-center">Character</h2>
-        <h5 id="know1" class="text-center">🔍당신에게 꼭 어울리는 마스크는?🔎</h5>
-        <h2 id="mask" class="text-center">마스크 테스트</h2>
-        
+        <img id="img" class="img-thumbnail mt-5" src="ex1.png" alt="">
 
-        <h2 id="explain1" class="text-center">explain1</h2>
-        <div id="explains">
-            <h2 id="explain2" class="text-center">explain2</h2>
-        </div>    
+        <h2 id="cat" class="text-center">CAT</h2>
+        <h5 id="explain" class="text-center">Explain</h5>
 
-        <h5 id="know1" class="text-center">😍나와 최고의 궁합은?😍</h5>
-        <h2 id="good" class="text-center">good</h2>
-
-        <h5 id="badcom" class="text-center">😷나와 최악의 궁합은?😷</h5>
-        <h2 id="bad" class="text-center">bad</h2>
+        <h5 id="know1" class="text-center">🔍이런 테스트는 어때?🔎</h5>
+        <img id="mask-img" class="rounded-circle" src="mask.jpg" onclick='location.href="https://maskmbti.netlify.app/"'>
+        <h2 id="mask" class="text-center"><a href="https://maskmbti.netlify.app/">마스크 테스트 하러가기</a></h2>
 
         <button type="button" id="fun2" class="fun-btn" onclick="location.href=''">처음부터</button>
 
@@ -138,13 +144,6 @@
         <div class="share addthis_inline_share_toolbox_5fks"></div>
         
     </article> 
-
-
-    <!-- 점수를 저장하는 곳 - value -->
-     <input type="hidden" id="EI" value="0">
-     <input type="hidden" id="SN" value="0">
-     <input type="hidden" id="TF" value="0">
-     <input type="hidden" id="JP" value="0">
 
 
      <!-- 스크립트 -->
@@ -160,18 +159,18 @@
 
         <article class="kakao_ad">
         <!-- 광고 kakao addfit -->
-        <ins class="kakao_ad_area" style="display:none;" 
-            data-ad-unit    = "DAN-zzhAHWQTsTfD4xbW" 
+          <ins class="kakao_ad_area" style="display:none;" 
+            data-ad-unit    = "DAN-EFv84JjAMjHHGtti" 
             data-ad-width   = "320" 
             data-ad-height  = "100"></ins> 
-            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+          <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>  
         </article>
 
         <!-- footer : 저작권 -->
         <div class="footer">
 
             <div class="footer-str">
-                <h3 id="footer-h">MBTI 추천 마스크</h3>
+                <h3 id="footer-h">묘생 테스트</h3>
                 <p id="footer-p">제작자: 김수환</p>
                 <p id="footer-p">이메일: vatican0@naver.com</p>
                 <p id="footer-p">블로그: https://stealswan.tistory.com/</p>

@@ -17,9 +17,11 @@ article{
 
 /* 전체 */
 .container{
-    background-image: url(mask7.jpg);
-    background-repeat: repeat;
-    margin: 0 auto;
+    background-image: url(bg3.jpg);
+    
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: inherit;
 }
 
 
@@ -48,7 +50,7 @@ h1 {
   font-size: 42px;
   margin: 0;
   line-height: 32px;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
 }
 
 .title {
@@ -72,13 +74,13 @@ span {
 }
 
 .title:nth-child(1) {
-  color: #e7503c;
+  color: #e5ff00;
 }
 .title:nth-child(2) {
-  color: #12d466;
+  color: #ffffff;
 }
 .title:nth-child(3) {
-  color: #f7c522;
+  color: #ffffff;
 }
 
 
@@ -99,16 +101,163 @@ span {
 } */
 
 
-/* 질문 */
-.question{
+/* 이미지 업로드 */
+.image-upload{
+
     display: none;
     width: 100%;
     margin-top: 13%;
 }
 
+.file-upload {
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10%;
+  padding: 20px;
+  padding-bottom: 40px;
+  border: 3px solid yellow;
+}
+
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  font-family: 'Jua', sans-serif;
+  background: #eeff00;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #ffd000;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.file-upload-btn:hover {
+  background: #ffc400;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  margin-top: 40px;
+  border: 4px dashed #ffee00;
+  position: relative;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #ffffff;
+  border: 4px dashed #ffffff;
+}
+
+.image-title-wrap {
+  padding: 10px 15px 15px 15px;
+  color: #222;
+}
+
+
+.image-title{
+
+  margin-top: 10%;
+  color: #646464;
+}
+
+
+.drag-text {
+  font-family: 'Jua', sans-serif;
+  text-align: center;
+}
+
+.drag-text h4 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #000000;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  font-family: 'Jua', sans-serif;
+  width: 200px;
+  margin: 0;
+  /* color: #fff; */
+  background: #ffee00;
+  border: none;
+  padding: 20px;
+  border-radius: 4px;
+  border-bottom: 4px solid #ff9100;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+
+/* 결과보기 */
+.go-result{
+
+  font-family: 'Jua', sans-serif;
+  width: 100px;
+  margin: 0;
+  /* color: #fff; */
+  background: #ffee00;
+  border: none;
+  padding: 10px;
+  margin-top: 15%;
+  border-radius: 4px;
+  border-bottom: 4px solid #ff9100;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
 
 /* 문제 항목 */
-#title1{
+/* #title1{
   font-family: 'Jua', sans-serif;
   color: rgb(204, 19, 204);
   font-size: 1.4em;
@@ -120,7 +269,7 @@ span {
   font-family: 'Jua', sans-serif;
   font-size: 1.2em;
   font-weight: 600;
-}
+} */
 
 
 .result{
@@ -132,6 +281,7 @@ span {
 #know1{
   margin-top: 25%;
   font-family: 'Jua', sans-serif;
+  color: brown;
 }
 
 /* 알고 계셨나요?2 */
@@ -144,15 +294,15 @@ span {
 
 /* 결과 이미지 */
 #img{
-    width: 250px;
-    height: 250px;
+    width: 270px;
+    height: 270px;
     margin: 0 auto;
-    border: 8px solid #d381c1;
+    border: 5px solid #d4a1c9;
 }
 
 
 /* mbti 유형 */
-#mbti{
+#cat{
 
   margin-top: 10%;
   font-family: 'Jua', sans-serif;
@@ -161,73 +311,28 @@ span {
 
 
 /* character */
-#character{
+#explain{
 
-  margin-top: 2%;
+  margin-top: 5%;
   font-family: 'Jua', sans-serif;
   color: red;
 }
 
 
-/* 추천 마스크 */
-#mask{
+/* 마스크 테스트 이미지 */
+#mask-img{
 
-  margin-top: 2%;
-  font-family: 'Jua', sans-serif;
-  color: red;
-}
-
-
-/* 설명1 */
-#explain1{
-  margin-top: 25%;
-  font-family: 'Jua', sans-serif;
-  font-size: 1.2em;
-}
-
-
-/* 설명2를 담는 div */
-#explains{
-
-  margin-top: 2%;
-  background-color: rgba(192, 113, 172, 0.438);
-  border-radius: 30px;
-  border: 1px solid;
-}
-
-
-/* 설명2 */
-#explain2{
-  
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  border: 5px solid #7c7c75;
   margin-top: 5%;
   margin-bottom: 5%;
-  margin-left: 3%;
-  margin-right: 3%;
-
-  line-height: 2;
-  font-family: 'Jua', sans-serif;
-  font-size: 1em;
 }
 
 
-/* 좋은 상성 */
-#good{
-
-  margin-top: 2%;
-  font-family: 'Jua', sans-serif;
-  color: red;
-}
-
-
-#badcom{
-
-  font-family: 'Jua', sans-serif;
-  margin-top: 10%;
-}
-
-
-/* 나쁜 상성 */
-#bad{
+/* 마스크 테스트 하러가기 */
+#mask{
 
   margin-top: 2%;
   font-family: 'Jua', sans-serif;
@@ -299,8 +404,8 @@ span {
 .fun-btn {
   /* change bg color to get different hues    */
   font-family: 'Jua', sans-serif;
-  background-color: rgb(231, 85, 195);
-  color: white;
+  background-color: rgb(251, 255, 0);
+  /* color: white; */
   padding: 1.5em 2em;
   border: none;
   transition: all .3s ease;
@@ -429,7 +534,9 @@ body {
   color: #8aaaff;
 }
 
-.progress-bar {
+
+/* 전 프로그래스바 */
+/* .progress-bar {
   background: #e6eeff;
   width: 100%;
   height: 15px;
@@ -442,14 +549,14 @@ body {
   width: 3px;
   height: 30px;
   border-radius: 5px;
-}
+} */
 
 
 /* 처음부터 */
 #begin{
   font-family: 'Jua', sans-serif;
-  color: rgb(204, 19, 204);
-  font-size: 1.3em;
+  color: rgb(255, 251, 0);
+  font-size: 1.1em;
 }
 
 
@@ -462,96 +569,168 @@ body {
   height:60px;
   position: absolute;
   left:50%;
-  top:45%;
+  top:32%;
   transform: translate(-50%, -50%);
 }
 
-.circle{
-  width:20px;
-  height:20px;
-  position: absolute;
-  border-radius: 50%;
-  background-color: rgb(252, 135, 174);
-  left:15%;
-  transform-origin: 50%;
-  animation: circle .5s alternate infinite ease;
+
+.cat {
+  position: relative;
+  width: 100%;
+  max-width: 20em;
+  overflow: hidden;
+  background-color: #e6dcdc;
+}
+.cat::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.cat:hover > * {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.cat:active > * {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
-@keyframes circle{
-  0%{
-      top:60px;
-      height:5px;
-      border-radius: 50px 50px 25px 25px;
-      transform: scaleX(1.7);
-  }
-  40%{
-      height:20px;
-      border-radius: 50%;
-      transform: scaleX(1);
-  }
-  100%{
-      top:0%;
-  }
-}
-.circle:nth-child(2){
-  left:45%;
-  animation-delay: .2s;
-}
-.circle:nth-child(3){
-  left:auto;
-  right:15%;
-  animation-delay: .3s;
-}
-.shadow{
-  width:20px;
-  height:4px;
-  border-radius: 50%;
-  background-color: rgba(0,0,0,.5);
+.cat__body, .cat__tail, .cat__head {
   position: absolute;
-  top:62px;
-  transform-origin: 50%;
-  z-index: -1;
-  left:15%;
-  filter: blur(1px);
-  animation: shadow .5s alternate infinite ease;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-animation: rotating 2.79s cubic-bezier(0.65, 0.54, 0.12, 0.93) infinite;
+          animation: rotating 2.79s cubic-bezier(0.65, 0.54, 0.12, 0.93) infinite;
+}
+.cat__body::before, .cat__tail::before, .cat__head::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-image: url("https://images.weserv.nl/?url=i.imgur.com/M1raXX3.png&il");
 }
 
-@keyframes shadow{
-  0%{
-      transform: scaleX(1.5);
-  }
-  40%{
-      transform: scaleX(1);
-      opacity: .7;
-  }
-  100%{
-      transform: scaleX(.2);
-      opacity: .4;
-  }
-}
-.shadow:nth-child(4){
-  left: 45%;
-  animation-delay: .2s
-}
-.shadow:nth-child(5){
-  left:auto;
-  right:15%;
-  animation-delay: .3s;
+.cat__head::before {
+  top: 0;
+  right: 0;
+  background-position: 100% 0%;
+  transform-origin: 0% 100%;
+  transform: rotate(90deg);
 }
 
-.loading span{
-  position: absolute;
-  top:75px;
+.cat__tail {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.cat__tail::before {
+  left: 0;
+  bottom: 0;
+  background-position: 0% 100%;
+  transform-origin: 100% 0%;
+  transform: rotate(-30deg);
+}
+
+.cat__body {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+.cat__body:nth-of-type(2) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.cat__body::before {
+  right: 0;
+  bottom: 0;
+  background-position: 100% 100%;
+  transform-origin: 0% 0%;
+}
+
+@-webkit-keyframes rotating {
+  from {
+    transform: rotate(720deg);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(720deg);
+  }
+  to {
+    transform: none;
+  }
+}
+.box {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6dcdc;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.intro {
+  width: 120%;
+  max-width: 36rem;
+  padding-bottom: 1rem;
+  padding-right: 15%;
+  margin: 0 auto 1em;
+  padding-top: 0.5em;
+  font-size: calc(1rem + 2vmin);
+  text-transform: capitalize;
+  text-align: center;
   font-family: 'Jua', sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 12px;
-  color: rgb(225, 0, 255);
-  left:15%;
-  box-shadow: none;
-  text-shadow: none;
-  transform: none;
+  color: rgb(255, 166, 0);
 }
+
+.intro small {
+  display: block;
+  opacity: 0.5;
+  font-style: italic;
+  text-transform: none;
+}
+
+.info {
+  margin: 0;
+  padding: 1em;
+  font-size: 0.9em;
+  font-style: italic;
+  font-family: serif;
+  text-align: right;
+  opacity: 0.5;
+}
+.info a {
+  color: inherit;
+}
+
+
 
 
 /* 결과 공유창 */
@@ -566,11 +745,11 @@ body {
 .footer {
   display: flex;
   flex-direction: row;
-  background-color: #dba6d0;
-  width: 108%;
+  background-color: #aaa7a9;
+  width: 110%;
   height: 200px;
   margin-top: 30%;
-  margin-left: -4%;
+  margin-left: -5%;
   padding: 35px 30px 0 30px;
   font-family: 'Jua', sans-serif;
   /* border: 3px solid #8d1d75; */
